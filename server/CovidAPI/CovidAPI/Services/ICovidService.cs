@@ -1,5 +1,6 @@
 ﻿namespace CovidAPI.Services
 {
+    using CovidAPI.Data;
     using System.Threading.Tasks;
 
     public interface ICovidService
@@ -15,5 +16,7 @@
         public Task<int> GetHospitalised();
 
         public Task<int> GetRecovered();
+
+        public Task<CovidInfo> GetAllInfo();
     }
 }

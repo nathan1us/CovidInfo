@@ -1,5 +1,7 @@
 ﻿namespace CovidAPI.Data
 {
+    using System;
+
     public class CovidInfo
     {
         public int Deaths { get; set; }
@@ -13,5 +15,7 @@
         public int Recovered { get; set; }
 
         public int Infected { get; set; }
+
+        public DateTime LastUpdated { get; set; }
     }
 }

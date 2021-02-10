@@ -1,5 +1,6 @@
 ﻿namespace CovidAPI.Controllers
 {
+    using CovidAPI.Data;
     using CovidAPI.Services;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
@@ -50,6 +51,12 @@
         public async Task<int> ActiveCases()
         {
             return await this.CovidService.GetActiveCases();
+        }
+
+        [HttpGet]
+        public async Task<CovidInfo> Covid()
+        {
+            return await this.CovidService.GetAllInfo();
         }
     }
 }

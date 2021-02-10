@@ -18,6 +18,12 @@
             return this.info.ActiveCases;
         }
 
+        public async Task<CovidInfo> GetAllInfo()
+        {
+            await UpdateData();
+            return this.info;
+        }
+
         public async Task<int> GetDeaths()
         {
             await UpdateData();
@@ -56,8 +62,10 @@
                 info = new CovidInfo();
                 newApp = true;
             }
+            // 1:30 - 1:35 : 1:32 
 
-            if (newApp || DateTime.Now.Minute % 5 == 0)
+            var updateTime = info.LastUpdated.AddMinutes(5);
+            if (newApp || updateTime.CompareTo(DateTime.Now) < 0)
             {
                 using (WebClient wc = new WebClient())
                 {
@@ -70,6 +78,7 @@
                     this.info.Hospitalised = o.SelectToken("hospitalised").Value<int>();
                     this.info.Recovered = o.SelectToken("recovered").Value<int>();
                     this.info.Deaths = o.SelectToken("deceased").Value<int>();
+                    info.LastUpdated = DateTime.Now;
                 }
             }
         }
