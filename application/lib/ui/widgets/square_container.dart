@@ -27,7 +27,7 @@ class _SquareContainerState extends State<SquareContainer> {
       child: Container(
         height: MediaQuery.of(context).size.height * .20,
         width: MediaQuery.of(context).size.width * .38,
-        decoration: _semptomBoxDecoration(),
+        decoration: _squareContainerDecoration(),
         child: Padding(
           padding: const EdgeInsets.all(11),
           child: Table(
@@ -55,7 +55,7 @@ class _SquareContainerState extends State<SquareContainer> {
     );
   }
 
-  BoxDecoration _semptomBoxDecoration() {
+  BoxDecoration _squareContainerDecoration() {
     return BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.all(Radius.circular(20)),

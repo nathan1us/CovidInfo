@@ -56,8 +56,8 @@ class _HomeNavigatorState extends State<HomeNavigator> {
                   icon: FaIcon(FontAwesomeIcons.chartBar),
                   title: Text('Статистика', style: _labelStyle)),
               BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.shieldVirus),
-                  title: Text('Предпазване', style: _labelStyle)),
+                  icon: FaIcon(FontAwesomeIcons.handshake),
+                  title: Text('Партньори', style: _labelStyle)),
             ],
           ),
         ),
